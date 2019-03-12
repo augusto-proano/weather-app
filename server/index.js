@@ -16,7 +16,7 @@ app.use(bodyParser.json({ extended: true }))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 //Compression middleware
-app.use(compression)
+app.use(compression())
 
 //Static file-serving middleware
 app.use(express.static(path.join(__dirname, '../public')))
