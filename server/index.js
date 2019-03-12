@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const compression = require('compression')
 const path = require('path')
 const PORT = process.env.PORT || 3000
+router = require('express').Router()
 
 const app = express()
 module.exports = app
@@ -17,6 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 //Compression middleware
 app.use(compression())
+
+//Api routes
+app.use('/api', require('./api'))
 
 //Static file-serving middleware
 app.use(express.static(path.join(__dirname, '../public')))

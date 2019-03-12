@@ -22,7 +22,9 @@
     "morgan": "^1.9.1",
     "path": "^0.12.7",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "request": "^2.88.0",
+    "request-json": "^0.6.4"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
