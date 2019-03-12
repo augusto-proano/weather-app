@@ -2,6 +2,7 @@ const morgan = require('morgan')
 const express = require('express')
 const bodyParser = require('body-parser')
 const compression = require('compression')
+const path = require('path')
 const PORT = process.env.PORT || 3000
 
 const app = express()

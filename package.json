@@ -4,7 +4,10 @@
   "description": "With a city's name or a zip code a user can retrieve on-demand weather information",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "node server",
+    "build-client-watch": "webpack -w",
+    "start-dev": "set NODE_ENV='development' & npm run build-client-watch & npm run start-server"
   },
   "prettier": {
     "singleQuote": true,
@@ -17,7 +20,9 @@
     "compression": "^1.7.3",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "react": "^16.8.4"
+    "path": "^0.12.7",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
