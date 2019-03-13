@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../store'
+import { weatherIcons, toCamelCase } from './utils'
 
 const Forecast = () => {
   //Grabs forecast from context
@@ -10,8 +11,10 @@ const Forecast = () => {
   const today = forecast.consolidated_weather
     ? forecast.consolidated_weather[0]
     : ''
-  
-  console.log("FORECAST", forecast)
+  const todaysWeatherState = forecast.consolidated_weather
+    ? toCamelCase(today.weather_state_name)
+    : ''
+  console.log('FORECAST', forecast)
   return (
     <div>
       {forecast.consolidated_weather ? (
@@ -24,7 +27,7 @@ const Forecast = () => {
                 <h1>{today.the_temp}</h1>
               </div>
               <div>
-                <h1>here goes img</h1>
+                <i className={weatherIcons[todaysWeatherState]} />
                 <h3>{today.weather_state_name}</h3>
               </div>
             </div>
@@ -38,15 +41,18 @@ const Forecast = () => {
           </div>
           <div>
             {forecast.consolidated_weather.map(day => {
-              const min = Math.round(day.min_temp)
-              const max = Math.round(day.max_temp)
+              const { min_temp, max_temp, weather_state_name } = day
+
+              const min = Math.round(min_temp)
+              const max = Math.round(max_temp)
+              const weatherState = toCamelCase(weather_state_name)
               return (
                 <div>
                   <h2>{day.applicable_date.slice(0, 4)}</h2>
                   <div>
                     <h3>{min}°</h3>
                     <h3>{max}°</h3>
-                    <h3>{day.weather_state_name}</h3>
+                    <i className={weatherIcons[weatherState]} />
                     <h3>{day.weather_state_name}</h3>
                   </div>
                 </div>
