@@ -5,7 +5,7 @@ import { withRouter, Switch, Route } from 'react-router-dom'
 const App = () => {
   return (
     <Switch>
-      <Route path="/" component={Input} />
+      <Route exact path="/" component={Input} />
       <Route path="/forecast" component={Forecast} />
     </Switch>
   )
