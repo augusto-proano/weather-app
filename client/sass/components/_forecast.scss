@@ -1,0 +1,85 @@
+@import '../utils';
+
+#forecast {
+  margin: 3vw;
+}
+
+#forecast-today {
+  @include flex(row);
+  justify-content: space-around;
+  margin: 2vw;
+}
+
+#forecast-today-temp {
+  display: flex;
+  width: 65%;
+}
+
+#forecast-today-details {
+  h3 {
+    font-size: 2vw;
+  }
+}
+
+#temp-info {
+  h3 {
+    margin: auto;
+    font-size: 2.5vw;
+  }
+  h2 {
+    font-size: 5vw;
+    margin: auto;
+  }
+  h1 {
+    margin: auto;
+    font-size: 10vw;
+  }
+}
+
+#temp-icon {
+  @extend %icon-color;
+  font-size: 15vw;
+  margin: 0vw 3vw 0vw;
+}
+
+.wi {
+  line-height: 1.5 !important;
+}
+
+#forecast-week {
+  @include flex(row);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#forecast-week-day {
+  @include flex(column);
+  border: ridge;
+  border-radius: 0.5vw;
+  width: 15%;
+  margin: 0vw 0vw 1vw;
+
+  i {
+    @extend %icon-color;
+    font-size: 7vw;
+  }
+  h2 {
+    margin: 1vw;
+    font-size: 3vw;
+  }
+  h3 {
+    font-size: 2vw;
+    margin: 3vw 0vw 1vw;
+  }
+}
+
+#forecast-week-day-temps {
+  @include flex(row);
+  width: 100%;
+  justify-content: space-around;
+  margin: 0vw 0vw 1vw 1vw;
+
+  h3 {
+    font-size: 3vw;
+  }
+}

@@ -1,0 +1,11 @@
+@mixin flex($direction) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+%icon-color {
+  background: -webkit-linear-gradient(#7a20bd, #0115ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

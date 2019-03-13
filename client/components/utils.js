@@ -16,3 +16,19 @@ export const toCamelCase = (str) => {
   lightCloud: 'wi wi-day-cloudy',
   clear: 'wi wi-day-sunny'
 }
+
+//Date info
+const date = new Date()
+const fullDate = date.toDateString().split(' ')
+
+const weekDays = {
+  0: 'Sunday',
+  1: 'Monday',
+  2: 'Tuesday',
+  3: 'Wednesday',
+  4: 'Thrusday',
+  5: 'Friday',
+  6: 'Saturday'
+}
+
+export const currentDay = weekDays[date.getDay()]

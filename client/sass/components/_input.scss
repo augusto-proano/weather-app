@@ -1,7 +1,7 @@
+@import '../utils';
+
 #input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(column);
 
   h1 {
     font-size: 8vw;
@@ -24,20 +24,17 @@
 }
 
 #input-token {
+  @include flex(row);
   margin: 4vw;
-  display: flex;
-  align-items: center;
 
   button {
     font-size: 2vw;
     margin: inherit;
   }
-
   h2 {
     margin: 1vw;
     font-size: 2.5vw;
   }
-
   input {
     outline: none;
     border-style: ridge;
