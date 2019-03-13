@@ -1,15 +1,17 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../store'
 
-const Forecast = props => {
+const Forecast = () => {
   //Grabs forecast from context
   const context = useContext(StoreContext)
   const { forecast } = context
 
+  //Today's forecast
   const today = forecast.consolidated_weather
     ? forecast.consolidated_weather[0]
     : ''
-
+  
+  console.log("FORECAST", forecast)
   return (
     <div>
       {forecast.consolidated_weather ? (
