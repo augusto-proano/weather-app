@@ -28,12 +28,11 @@ const Input = () => {
   }
 
   return (
-    <div>
-      <h1>Weather 7 Days Forecast</h1>
-      <h2>Input your city or zip code</h2>
-      <i class="wi wi-day-windy"></i>
-      <input onChange={handleInput} />
-      <div>
+    <div id="input">
+      <h1>WEATHER FORECAST</h1>
+      <h2>ENTER CITY OR ZIP CODE</h2>
+      <input id="input-location" onChange={handleInput} />
+      <div id="input-token">
         <h2>Token:</h2>
         <input />
         <button>Free Token</button>

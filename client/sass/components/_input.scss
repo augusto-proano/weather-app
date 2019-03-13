@@ -1,0 +1,48 @@
+#input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 8vw;
+  }
+  h2 {
+    font-size: 4vw;
+  }
+  button {
+    font-size: 6vw;
+  }
+}
+
+#input-location {
+  outline: none;
+  border-style: ridge;
+  border-radius: 1.5vw;
+  width: 35vw;
+  font-size: 5vw;
+  text-align: center;
+}
+
+#input-token {
+  margin: 4vw;
+  display: flex;
+  align-items: center;
+
+  button {
+    font-size: 2vw;
+    margin: inherit;
+  }
+
+  h2 {
+    margin: 1vw;
+    font-size: 2.5vw;
+  }
+
+  input {
+    outline: none;
+    border-style: ridge;
+    border-radius: 0.5vw;
+    font-size: 2vw;
+    width: 9vw;
+  }
+}

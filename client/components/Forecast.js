@@ -41,17 +41,17 @@ const Forecast = () => {
           </div>
           <div>
             {forecast.consolidated_weather.map(day => {
-              const { min_temp, max_temp, weather_state_name } = day
+              const { min_temp, max_temp, weather_state_name, id } = day
 
               const min = Math.round(min_temp)
               const max = Math.round(max_temp)
               const weatherState = toCamelCase(weather_state_name)
               return (
-                <div>
+                <div key={id}>
                   <h2>{day.applicable_date.slice(0, 4)}</h2>
                   <div>
-                    <h3>{min}°</h3>
-                    <h3>{max}°</h3>
+                    <h3>{min}°C</h3>
+                    <h3>{max}°C</h3>
                     <i className={weatherIcons[weatherState]} />
                     <h3>{day.weather_state_name}</h3>
                   </div>
