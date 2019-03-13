@@ -1,5 +1,5 @@
 const isDev = process.env.NODE_ENV === 'development'
-const Fiber = require('fiber')
+const Fiber = require('fibers')
 const CssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -44,7 +44,7 @@ module.exports = {
   plugins: [
     new CssExtractPlugin({
       path: __dirname,
-      filename: './public/style.css'
+      filename: './public/style/index.css'
     })
   ]
 }

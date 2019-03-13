@@ -31,6 +31,7 @@ const Input = () => {
     <div>
       <h1>Weather 7 Days Forecast</h1>
       <h2>Input your city or zip code</h2>
+      <i class="wi wi-day-windy"></i>
       <input onChange={handleInput} />
       <div>
         <h2>Token:</h2>
