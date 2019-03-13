@@ -1,8 +1,15 @@
 import React from 'react'
-import { Input } from './components'
+import { Input, Forecast } from './components'
+import { withRouter, Switch, Route } from 'react-router-dom'
 
 const App = () => {
-  return <Input />
+  return (
+    <Switch>
+      <Route path="/" component={Input} />
+      <Route path="/forecast" component={Forecast} />
+    </Switch>
+  )
 }
 
-export default App
+// The withRouter wrapper makes sure that updates are not blocked when the url changes
+export default withRouter(App)
