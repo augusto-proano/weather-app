@@ -1,5 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development'
 const Fiber = require('fiber')
+const CssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: isDev ? 'development' : 'production',
@@ -25,7 +26,9 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader', // creates style nodes from JS strings
+          isDev
+            ? 'style-loader' // creates style nodes from JS strings
+            : CssExtractPlugin.loader, //extracts stylesheets into a dedicated file
           'css-loader', // translates CSS into CommonJS
           {
             loader: 'sass-loader', // compiles Sass to CSS
@@ -37,5 +40,11 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new CssExtractPlugin({
+      path: __dirname,
+      filename: './public/style.css'
+    })
+  ]
 }
