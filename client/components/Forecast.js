@@ -60,7 +60,7 @@ const Forecast = () => {
           </div>
         </div>
       ) : (
-        <img src="https://www.ubykotex.com/Assets/images/loading-image.gif" />
+        <img id="loading-img" src="/img/loading-image.gif" />
       )}
     </div>
   )
