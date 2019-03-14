@@ -8,7 +8,7 @@ export const toCamelCase = (str) => {
   snow: 'wi wi-snow',
   sleet: 'wi wi-sleet',
   hail: 'wi wi-hail',
-  thunderStorm: 'wi wi-thunderstorm',
+  thunder: 'wi wi-thunderstorm',
   heavyRain: 'wi wi-rain',
   lightRain: 'wi wi-showers',
   showers: 'wi wi-day-showers',
