@@ -74,7 +74,7 @@
 
 #forecast-week-day {
   @include flex(column);
-  border: ridge;
+  border: inset 0.3vw #6857af;
   border-radius: 0.5vw;
   width: 15%;
   margin: 0vw 0vw 1vw;

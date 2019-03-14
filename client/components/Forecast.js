@@ -8,21 +8,18 @@ const Forecast = () => {
   const { forecast } = context
 
   //Today's forecast variables
-  const today = forecast.consolidated_weather
-    ? forecast.consolidated_weather[0]
-    : ''
-  const todaysWeatherState = forecast.consolidated_weather
+  const fetched = forecast.consolidated_weather ? true : false
+  const today = fetched ? forecast.consolidated_weather[0] : ''
+  const todaysWeatherState = fetched
     ? toCamelCase(today.weather_state_name)
     : ''
-  const sunRise = forecast.sun_rise
-    ? `${forecast.sun_rise.slice(11, 16)} AM`
-    : ''
-  const sunSet = forecast.sun_set ? `${forecast.sun_set.slice(11, 16)} PM` : ''
+  const sunRise = fetched ? `${forecast.sun_rise.slice(11, 16)} AM` : ''
+  const sunSet = fetched ? `${forecast.sun_set.slice(11, 16)} PM` : ''
 
   console.log('FORECAST', forecast)
   return (
     <div>
-      {forecast.consolidated_weather ? (
+      {fetched ? (
         <div id="forecast">
           <div id="forecast-today">
             <div id="forecast-today-temp">

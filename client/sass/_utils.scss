@@ -9,3 +9,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+%input {
+  outline: none;
+  text-shadow: 0px 0px 0.3vw rgb(78, 48, 255);
+  border: inset 0.3vw #6857af;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+%input-focus {
+  box-shadow: 0 0 0.2vw 0.1vw #4e30ff;
+}

@@ -10,17 +10,34 @@
     font-size: 4vw;
   }
   button {
+    outline: none;
+    color: white;
+    padding: 0.5vw 2vw;
+    border: inset 2px #a04ede;
+    border-radius: 1vw;
+    background-image: linear-gradient(45deg, #7a20bd, #0115ff);
+    box-shadow: 0px 0px 0px 1px #7a20bd;
+    transition: 1s;
     font-size: 6vw;
+    margin: 0 0 10vw;
+  }
+
+  button:hover {
+    color: #202b47;
+    background-image: linear-gradient(45deg, #6a54c05c, #1661f3d6);
   }
 }
 
 #input-location {
-  outline: none;
-  border-style: ridge;
+  @extend %input;
   border-radius: 1.5vw;
   width: 35vw;
   font-size: 5vw;
   text-align: center;
+}
+
+#input-location:focus {
+  @extend %input-focus;
 }
 
 #input-token {
@@ -28,6 +45,7 @@
   margin: 4vw;
 
   button {
+    outline: none;
     font-size: 2vw;
     margin: inherit;
   }
@@ -36,10 +54,12 @@
     font-size: 2.5vw;
   }
   input {
-    outline: none;
-    border-style: ridge;
+    @extend %input;
     border-radius: 0.5vw;
     font-size: 2vw;
     width: 9vw;
+  }
+  input:focus {
+    @extend %input-focus;
   }
 }
