@@ -14,10 +14,7 @@ router.post('/', (req, res) => {
       expiresIn: 1440 // expires in 24 hours
     })
 
-    res.json({
-      message: 'Authentication Done ',
-      token: token
-    })
+    res.send(token)
   } else {
     res.status(401).send('Wrong Credential')
   }
