@@ -31,11 +31,19 @@ const Input = () => {
 
   const fetchForecast = async () => {
     try {
-      const res = await axios.post('/api/forecast', { location })
+      //Gets city's name if zipcode is given
+      let newCity = ''
+      if (!isNaN(Number(location))) {
+        const res = await axios.post('/api/zipcodes', { location })
+        newCity = res.data
+      }
+      
+      const city = !isNaN(Number(location)) ? newCity : location
+      const res = await axios.post('/api/forecast', { city })
       setForecast(res.data)
 
       //Token validation action
-      if(res.data === 'Invalid Token') setTokenVal(res.data)
+      if (res.data === 'Invalid Token') setTokenVal(res.data)
       else history.push('/forecast')
     } catch (err) {
       setTokenVal(err)
@@ -61,14 +69,18 @@ const Input = () => {
     <div id="input">
       <h1>WEATHER FORECAST</h1>
       <h2>ENTER CITY OR ZIP CODE</h2>
-      <input id="input-location" value={location} onChange={handleLocationInput} />
+      <input
+        id="input-location"
+        value={location}
+        onChange={handleLocationInput}
+      />
       <div id="input-token">
         <h2>Token:</h2>
         <input onChange={handleTokenInput} value={accessToken} />
         <button onClick={getToken}>Free Token</button>
       </div>
       <button onClick={fetchForecast}>Forecast</button>
-      {tokenVal ? <h3 className='alert'>{tokenVal}</h3> : <></>}
+      {tokenVal ? <h3 className="alert">{tokenVal}</h3> : <></>}
     </div>
   )
 }

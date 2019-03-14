@@ -28,7 +28,6 @@ router.use((req, res, next) => {
 
 router.use('/forecast', require('./forecast'))
 router.use('/zipcodes', require('./zipcodes'))
-router.use('/auth', require('../auth'))
 
 //Error handler route
 router.use((req, res, next) => {

@@ -66,13 +66,11 @@ const Forecast = () => {
               //Gets weekdays initials
               const date = new Date(applicable_date)
               const dayNum = date.getDay()
-              console.log("DATE", dayNum, applicable_date)
               const weekDay = weekDays[dayNum].slice(0, 3).toUpperCase()
 
               const min = Math.round(min_temp)
               const max = Math.round(max_temp)
               const weatherState = toCamelCase(weather_state_name)
-              console.log("WEATHERSTATE", weatherState)
               return (
                 <div id="forecast-week-day" key={id}>
                   <h2>{weekDay}</h2>

@@ -6,13 +6,13 @@ const weatherAPI = request.createClient(
   'https://www.metaweather.com/api/location/'
 )
 
-router.post('/', async (req, res, next) => {
-  const { location } = req.body
+router.post('/', async (req, res) => {
+  const { city } = req.body
 
   try {
     //Get where on Earth ID
-    const city = await weatherAPI.get(`search/?query=${location}`)
-    const { woeid } = city.body[0]
+    const resAPI = await weatherAPI.get(`search/?query=${city}`)
+    const { woeid } = resAPI.body[0]
 
     //Get and send forecast from API
     const forecast = await weatherAPI.get(`${woeid}`)
