@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const compression = require('compression')
 const path = require('path')
 const PORT = process.env.PORT || 3000
-router = require('express').Router()
 
 const app = express()
 module.exports = app
@@ -21,6 +20,7 @@ app.use(compression())
 
 //Api routes
 app.use('/api', require('./api'))
+app.use('/auth', require('./auth'))
 
 //Static file-serving middleware
 app.use(express.static(path.join(__dirname, '../public')))
@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'))
 })
+
 
 //Error handling middleware
 app.use((err, req, res, next) => {

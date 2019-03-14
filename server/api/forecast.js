@@ -2,13 +2,12 @@ const request = require('request-json')
 const router = require('express').Router()
 module.exports = router
 
-const currentToken = 'helloworld'
 const weatherAPI = request.createClient(
   'https://www.metaweather.com/api/location/'
 )
 
 router.post('/', async (req, res, next) => {
-  const { location, token } = req.body
+  const { location } = req.body
 
   try {
     //Get where on Earth ID
