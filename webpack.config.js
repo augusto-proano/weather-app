@@ -1,4 +1,4 @@
-const isDev = true
+const isDev = process.env.NODE_ENV === 'development'
 const Fiber = require('fibers')
 const CssExtractPlugin = require('mini-css-extract-plugin')
 

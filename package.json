@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server": "node server",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "build-client-watch": "webpack -w",
-    "start-dev": "set NODE_ENV='development' & npm run build-client-watch & npm run start-server"
+    "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start-server"
   },
   "prettier": {
     "singleQuote": true,

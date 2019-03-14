@@ -1,20 +1,23 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../store'
-import { weatherIcons, toCamelCase, currentDay } from './utils'
-console.log(currentDay)
+import { weatherIcons, toCamelCase, currentDay, weekDays } from './utils'
 
 const Forecast = () => {
   //Grabs forecast from context
   const context = useContext(StoreContext)
   const { forecast } = context
 
-  //Today's forecast
+  //Today's forecast variables
   const today = forecast.consolidated_weather
     ? forecast.consolidated_weather[0]
     : ''
   const todaysWeatherState = forecast.consolidated_weather
     ? toCamelCase(today.weather_state_name)
     : ''
+  const sunRise = forecast.sun_rise
+    ? `${forecast.sun_rise.slice(11, 16)} AM`
+    : ''
+  const sunSet = forecast.sun_set ? `${forecast.sun_set.slice(11, 16)} PM` : ''
 
   console.log('FORECAST', forecast)
   return (
@@ -31,23 +34,49 @@ const Forecast = () => {
               <i id="temp-icon" className={weatherIcons[todaysWeatherState]} />
             </div>
             <div id="forecast-today-details">
-              <h3>Humidity: {today.humidity}%</h3>
-              <h3>Air Pressure: {today.air_pressure.toFixed(1)} MB</h3>
-              <h3>Wind: {Math.round(today.wind_speed)} MPH</h3>
-              <h3>Sunrise: {forecast.sun_rise.slice(0, 7)}</h3>
-              <h3>Sunset: {forecast.sun_set.slice(0, 7)}</h3>
+              <div>
+                <h2>Humidity: </h2>
+                <h3> {today.humidity}%</h3>
+              </div>
+              <div>
+                <h2>Air Pressure:</h2>
+                <h3> {today.air_pressure.toFixed(1)} MB</h3>
+              </div>
+              <div>
+                <h2>Wind:</h2>
+                <h3> {Math.round(today.wind_speed)} MPH</h3>
+              </div>
+              <div>
+                <h2>Sunrise:</h2>
+                <h3> {sunRise}</h3>
+              </div>
+              <div>
+                <h2>Sunset:</h2>
+                <h3> {sunSet}</h3>
+              </div>
             </div>
           </div>
           <div id="forecast-week">
             {forecast.consolidated_weather.map(day => {
-              const { min_temp, max_temp, weather_state_name, id } = day
+              const {
+                min_temp,
+                max_temp,
+                weather_state_name,
+                applicable_date,
+                id
+              } = day
+
+              //Gets weekdays initials
+              const date = new Date(applicable_date)
+              const weekDay = weekDays[date.getDay()].slice(0, 3).toUpperCase()
 
               const min = Math.round(min_temp)
               const max = Math.round(max_temp)
               const weatherState = toCamelCase(weather_state_name)
+
               return (
                 <div id="forecast-week-day" key={id}>
-                  <h2>SUN</h2>
+                  <h2>{weekDay}</h2>
                   <div id="forecast-week-day-temps">
                     <h3>{min}°</h3>
                     <h3>{max}°</h3>

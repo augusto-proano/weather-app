@@ -16,8 +16,18 @@
 }
 
 #forecast-today-details {
-  h3 {
-    font-size: 2vw;
+  div {
+    display: flex;
+
+    h2 {
+      @extend %icon-color;
+      margin: .5vw;
+      font-size: 2vw;
+    }
+    h3 {
+      margin: .5vw;
+      font-size: 2vw;
+    }
   }
 }
 

@@ -21,7 +21,7 @@ export const toCamelCase = (str) => {
 const date = new Date()
 const fullDate = date.toDateString().split(' ')
 
-const weekDays = {
+export const weekDays = {
   0: 'Sunday',
   1: 'Monday',
   2: 'Tuesday',
