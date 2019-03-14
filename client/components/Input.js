@@ -13,9 +13,10 @@ const Input = () => {
   const { setForecast } = context
 
   //Adds token to headers requests
-  axios.defaults.headers.common['access-token'] = token
-    ? token
-    : sessionStorage.getItem('token')
+  const accessToken = token
+  ? token
+  : sessionStorage.getItem('token')
+  axios.defaults.headers.common['access-token'] = accessToken
   console.log(token)
 
   //Handles locaion input from user
@@ -61,7 +62,7 @@ const Input = () => {
       <input id="input-location" onChange={handleLocationInput} />
       <div id="input-token">
         <h2>Token:</h2>
-        <input onChange={handleTokenInput} value={token} />
+        <input onChange={handleTokenInput} value={accessToken} />
         <button onClick={getToken}>Free Token</button>
       </div>
       <button onClick={fetchForecast}>Forecast</button>
