@@ -7,15 +7,14 @@ const Input = () => {
   //States and setStates func
   const [location, setLocation] = useState('')
   const [token, setToken] = useState('')
+  const [tokenVal, setTokenVal] = useState('')
 
   // Grabs setForecast func from context
   const context = useContext(StoreContext)
   const { setForecast } = context
 
   //Adds token to headers requests
-  const accessToken = token
-  ? token
-  : sessionStorage.getItem('token')
+  const accessToken = token ? token : sessionStorage.getItem('token')
   axios.defaults.headers.common['access-token'] = accessToken
   console.log(token)
 
@@ -33,10 +32,14 @@ const Input = () => {
 
   const fetchForecast = async () => {
     try {
-      history.push('/forecast')
       const res = await axios.post('/api/forecast', { location })
       setForecast(res.data)
+
+      //Token validation action
+      if(res.data === 'Invalid Token') setTokenVal(res.data)
+      else history.push('/forecast')
     } catch (err) {
+      setTokenVal(err)
       console.error(err)
     }
   }
@@ -66,6 +69,7 @@ const Input = () => {
         <button onClick={getToken}>Free Token</button>
       </div>
       <button onClick={fetchForecast}>Forecast</button>
+      {tokenVal ? <h3 className='alert'>{tokenVal}</h3> : <></>}
     </div>
   )
 }

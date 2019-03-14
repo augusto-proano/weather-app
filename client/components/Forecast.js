@@ -86,7 +86,7 @@ const Forecast = () => {
           </div>
         </div>
       ) : (
-        <img id="loading-img" src="/img/loading-image.gif" />
+        <></>
       )}
     </div>
   )

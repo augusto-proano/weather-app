@@ -6,7 +6,7 @@
 
 #input-token input, #input-location {
   outline: none;
-  text-shadow: 0px 0px 0.3vw #4e30ff;
+  text-shadow: 0px 0px 0.1vw #4e30ff;
   border: inset 0.3vw #6857af;
   transition: box-shadow 0.2s ease-in-out;
 }
@@ -36,7 +36,6 @@
   box-shadow: 0px 0px 0px 1px #7a20bd;
   transition: 1s;
   font-size: 6vw;
-  margin: 0 0 10vw;
 }
 #input button:hover {
   color: #202b47;
@@ -78,7 +77,7 @@
 
 #input-location, #input-token input {
   outline: none;
-  text-shadow: 0px 0px 0.3vw #4e30ff;
+  text-shadow: 0px 0px 0.1vw #4e30ff;
   border: inset 0.3vw #6857af;
   transition: box-shadow 0.2s ease-in-out;
 }
@@ -138,16 +137,6 @@
   line-height: 1.5 !important;
 }
 
-#loading-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  margin-top: -100px;
-  margin-left: -100px;
-}
-
 #forecast-week {
   display: flex;
   align-items: center;
@@ -195,6 +184,11 @@ body {
 
 button {
   cursor: pointer;
+}
+
+.alert {
+  font-size: 3vw;
+  color: #ff0000;
 }
 
 /*# sourceMappingURL=index.css.map*/

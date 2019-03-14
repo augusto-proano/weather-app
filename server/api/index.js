@@ -13,7 +13,7 @@ router.use((req, res, next) => {
     // Verifies secret and checks if the token is expired
     jwt.verify(token, secret, (err, decoded) => {
       if (err) {
-        return res.json({ message: 'invalid token' })
+        return res.send('Invalid Token')
       } else {
         // If right, saves to request for use in other routes
         req.decoded = decoded
