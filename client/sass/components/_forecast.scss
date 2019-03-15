@@ -16,6 +16,9 @@
 }
 
 #forecast-today-details {
+  display: flex;
+  flex-direction: column;
+
   div {
     display: flex;
 
@@ -28,6 +31,20 @@
       margin: 0.5vw;
       font-size: 1.5vw;
     }
+  }
+
+  a {
+    align-self: center;
+  }
+
+  button {
+    @extend %button;
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    margin: 0.5vw;
+  }
+  button:hover {
+    @extend %button-hover;
   }
 }
 

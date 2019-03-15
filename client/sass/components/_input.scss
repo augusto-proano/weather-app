@@ -11,21 +11,14 @@
     font-size: 3vw;
   }
   button {
-    outline: none;
-    color: white;
-    padding: 0.5vw 1vw;
-    border: inset 2px #a04ede;
+    @extend %button;
     border-radius: 1vw;
-    background-image: linear-gradient(45deg, #7a20bd, #0115ff);
-    box-shadow: 0px 0px 0px 1px #7a20bd;
-    transition: 1s;
     font-size: 3vw;
     width: 20vw;
   }
 
   button:hover {
-    color: #202b47;
-    background-image: linear-gradient(45deg, #6a54c05c, #1661f3d6);
+    @extend %button-hover;
   }
 }
 
@@ -46,7 +39,6 @@
   margin: 2vw;
 
   button {
-    outline: none;
     font-size: 1vw;
     margin: inherit;
     width: 8vw;

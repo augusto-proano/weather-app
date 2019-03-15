@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../store'
+import {Link} from 'react-router-dom'
 import { weatherIcons, toCamelCase, weekDays } from './utils'
 
 const Forecast = () => {
@@ -55,6 +56,9 @@ const Forecast = () => {
                 <h2>Sunset:</h2>
                 <h3> {sunSet}</h3>
               </div>
+              <Link to='/'>
+              <button>New Forecast</button>
+              </Link>
             </div>
           </div>
           <div id="forecast-week">

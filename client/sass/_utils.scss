@@ -21,3 +21,18 @@
 %input-focus {
   box-shadow: 0 0 0.2vw 0.1vw #4e30ff;
 }
+
+%button {
+  outline: none;
+  color: white;
+  padding: 0.5vw 1vw;
+  border: inset 2px #a04ede;
+  background-image: linear-gradient(45deg, #7a20bd, #0115ff);
+  box-shadow: 0px 0px 0px 1px #7a20bd;
+  transition: 1s;
+}
+
+%button-hover {
+  color: #202b47;
+  background-image: linear-gradient(45deg, #6a54c05c, #1661f3d6);
+}
