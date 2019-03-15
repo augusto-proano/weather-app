@@ -4,8 +4,8 @@ const { secret, credential } = require('../secrets')
 module.exports = router
 
 router.post('/', (req, res) => {
+  //Creates token with right credential
   if (req.body.credential === credential) {
-    //Creates token with right credential
     const payload = {
       check: true
     }

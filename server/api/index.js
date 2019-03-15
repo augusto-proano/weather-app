@@ -5,7 +5,7 @@ module.exports = router
 
 //Auth middleware
 router.use((req, res, next) => {
-  // check header for the token
+  // Checks header for the token
   var token = req.headers['access-token']
 
   // decode token

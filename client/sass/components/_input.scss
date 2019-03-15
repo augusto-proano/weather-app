@@ -42,7 +42,7 @@
     font-size: 1vw;
     margin: inherit;
     width: 8vw;
-    border-radius: .5vw;
+    border-radius: 0.5vw;
   }
   h2 {
     margin: 1vw;
@@ -56,5 +56,53 @@
   }
   input:focus {
     @extend %input-focus;
+  }
+}
+
+// Media Queries
+@media (max-width: 400px) {
+  .alert {
+    font-size: 6vw !important;
+  }
+  #input {
+    h1 {
+      margin: 15vw 0vw 25vw 0vw;
+      font-size: 8vw;
+    }
+    h2 {
+      font-size: 5.5vw;
+    }
+    button {
+      margin: 5vw 0 4vw;
+      border-radius: 2vw;
+      font-size: 10vw;
+      width: 85vw;
+    }
+  }
+
+  #input-location {
+    border-radius: 1.5vw;
+    width: 60%;
+    font-size: 9vw;
+    text-align: center;
+  }
+
+  #input-token {
+    margin: 15vw;
+
+    h2 {
+      font-size: 5.5vw;
+    }
+    button {
+      font-size: 4.5vw;
+      margin: 1vw 0 0 9vw;
+      width: 26vw;
+      border-radius: 1vw;
+    }
+    input {
+      border-radius: 1vw;
+      font-size: 5.5vw;
+      width: 25vw;
+    }
   }
 }
