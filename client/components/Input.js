@@ -41,7 +41,7 @@ const Input = () => {
       //Retrieves forecast
       const city = !isNaN(Number(location)) ? newCity : location
       const res = await axios.post('/api/forecast', { city })
-
+      console.log("RES", res.data)
       //Validations
       if (res.data === 'Invalid Token' || res.data === 'Location Not Found')
         setValidation(res.data)
@@ -50,8 +50,9 @@ const Input = () => {
         history.push('/forecast')
       }
     } catch (err) {
-      setValidation('Location Not Found')
-      console.error(err)
+      
+      setValidation('Invalid Token')
+      console.log("EEEEEEEEE", err)
     }
   }
 

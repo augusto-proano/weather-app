@@ -9,6 +9,6 @@ router.post('/', async (req, res) => {
     const { city } = await zipcodes.lookup(location)
     res.send(city)
   } catch (err) {
-    res.status(404).send('Zipcode Not Found')
+    res.send('Location Not Found')
   }
 })
