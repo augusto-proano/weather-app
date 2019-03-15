@@ -1,5 +1,5 @@
 # Weather App
-### Retrieve the most updated weather forecast, just enter your city or your zipcode
+### Get the most updated weather forecast, just enter your city or your zipcode
 ## How to run App
 ### macOS
 1. Click the clone or download button and copy the link below
