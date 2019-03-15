@@ -5,15 +5,15 @@
 1. Click the clone or download and copy the link below
 2. In your command line type git clone https://github.com/augusto-proano/weather-app.git
 3. Type cd weather-app
-4. Type npm i   //to install all dependencies
-5. Type npm run start   //to build the client bundle files and start the server
+4. Type npm i   //install all dependencies
+5. Type npm run start   //build client and start server
 6. Finally go to http://localhost:3000
 
 ### Windows
 If you are using windows follow this extra step
 
-5. Type npm run build-client   //to build the client bundle files
-6. Type npm run start-server   //to start the server
+5. Type npm run build-client   //build client
+6. Type npm run start-server   //start server
 7. Finally go to http://localhost:3000
 
 # Architecture
