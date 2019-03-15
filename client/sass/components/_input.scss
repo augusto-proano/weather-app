@@ -4,21 +4,23 @@
   @include flex(column);
 
   h1 {
-    font-size: 8vw;
+    margin: 3vw;
+    font-size: 6vw;
   }
   h2 {
-    font-size: 4vw;
+    font-size: 3vw;
   }
   button {
     outline: none;
     color: white;
-    padding: 0.5vw 2vw;
+    padding: 0.5vw 1vw;
     border: inset 2px #a04ede;
     border-radius: 1vw;
     background-image: linear-gradient(45deg, #7a20bd, #0115ff);
     box-shadow: 0px 0px 0px 1px #7a20bd;
     transition: 1s;
-    font-size: 6vw;
+    font-size: 3vw;
+    width: 20vw;
   }
 
   button:hover {
@@ -30,8 +32,8 @@
 #input-location {
   @extend %input;
   border-radius: 1.5vw;
-  width: 35vw;
-  font-size: 5vw;
+  width: 30vw;
+  font-size: 4vw;
   text-align: center;
 }
 
@@ -41,22 +43,24 @@
 
 #input-token {
   @include flex(row);
-  margin: 4vw;
+  margin: 2vw;
 
   button {
     outline: none;
-    font-size: 2vw;
+    font-size: 1vw;
     margin: inherit;
+    width: 8vw;
+    border-radius: .5vw;
   }
   h2 {
     margin: 1vw;
-    font-size: 2.5vw;
+    font-size: 1.5vw;
   }
   input {
     @extend %input;
     border-radius: 0.5vw;
-    font-size: 2vw;
-    width: 9vw;
+    font-size: 1.5vw;
+    width: 7vw;
   }
   input:focus {
     @extend %input-focus;

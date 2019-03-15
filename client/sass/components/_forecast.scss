@@ -21,12 +21,12 @@
 
     h2 {
       @extend %icon-color;
-      margin: .5vw;
-      font-size: 2vw;
+      margin: 0.5vw;
+      font-size: 1.5vw;
     }
     h3 {
-      margin: .5vw;
-      font-size: 2vw;
+      margin: 0.5vw;
+      font-size: 1.5vw;
     }
   }
 }
@@ -37,18 +37,18 @@
     font-size: 2.5vw;
   }
   h2 {
-    font-size: 5vw;
+    font-size: 3.5vw;
     margin: auto;
   }
   h1 {
     margin: auto;
-    font-size: 10vw;
+    font-size: 8.5vw;
   }
 }
 
 #temp-icon {
   @extend %icon-color;
-  font-size: 15vw;
+  font-size: 12vw;
   margin: 0vw 3vw 0vw;
 }
 
@@ -67,19 +67,18 @@
   border: inset 0.3vw #6857af;
   border-radius: 0.5vw;
   width: 15%;
-  margin: 0vw 0vw 1vw;
 
   i {
     @extend %icon-color;
-    font-size: 7vw;
+    font-size: 6vw;
   }
   h2 {
     margin: 1vw;
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
   h3 {
-    font-size: 2vw;
-    margin: 3vw 0vw 1vw;
+    font-size: 1.5vw;
+    margin: 1.5vw 0vw 1vw;
   }
 }
 
@@ -87,9 +86,75 @@
   @include flex(row);
   width: 100%;
   justify-content: space-around;
-  margin: 0vw 0vw 1vw 1vw;
+  margin: 0vw 0vw 0vw 1vw;
 
   h3 {
-    font-size: 3vw;
+    font-size: 2.5vw;
+  }
+}
+
+// Media Queries
+@media (max-width: 1700px) {
+  #input {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #forecast {
+    width: 95%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  #input h1 {
+    margin: 15vw 0vw 25vw 0vw;
+    font-size: 8vw;
+  }
+
+  #input h2 {
+    font-size: 5.5vw;
+  }
+
+  #input-location {
+    border-radius: 1.5vw;
+    width: 60%;
+    font-size: 9vw;
+    text-align: center;
+  }
+
+  #input-token h2 {
+    font-size: 5.5vw;
+  }
+
+  #input-token {
+    margin: 10vw;
+  }
+
+  #input-token input {
+    border-radius: 1vw;
+    font-size: 5.5vw;
+    width: 25vw;
+  }
+
+  #input button {
+    margin: 15vw;
+    border-radius: 2vw;
+    font-size: 10vw;
+    width: 85vw;
+  }
+
+  #input-token button {
+    font-size: 4.5vw;
+    margin: 1vw 0 0 9vw;
+    width: 26vw;
+    border-radius: 1vw;
   }
 }
