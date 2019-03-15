@@ -18,6 +18,6 @@ router.post('/', async (req, res) => {
     const forecast = await weatherAPI.get(`${woeid}`)
     res.send(forecast.body)
   } catch (err) {
-    res.status(404).send('Location Not Found')
+    res.send('Location Not Found')
   }
 })

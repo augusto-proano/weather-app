@@ -7,7 +7,7 @@ const Input = () => {
   //States and setStates func
   const [location, setLocation] = useState('')
   const [token, setToken] = useState('')
-  const [tokenVal, setTokenVal] = useState('')
+  const [validation, setValidation] = useState('')
 
   // Grabs setForecast func from context
   const context = useContext(StoreContext)
@@ -37,16 +37,20 @@ const Input = () => {
         const res = await axios.post('/api/zipcodes', { location })
         newCity = res.data
       }
-      
+
+      //Retrieves forecast
       const city = !isNaN(Number(location)) ? newCity : location
       const res = await axios.post('/api/forecast', { city })
-      setForecast(res.data)
 
-      //Token validation action
-      if (res.data === 'Invalid Token') setTokenVal(res.data)
-      else history.push('/forecast')
+      //Validations
+      if (res.data === 'Invalid Token' || res.data === 'Location Not Found')
+        setValidation(res.data)
+      else {
+        setForecast(res.data)
+        history.push('/forecast')
+      }
     } catch (err) {
-      setTokenVal(err)
+      setValidation('Location Not Found')
       console.error(err)
     }
   }
@@ -79,8 +83,10 @@ const Input = () => {
         <input onChange={handleTokenInput} value={accessToken} />
         <button onClick={getToken}>Free Token</button>
       </div>
+      <div id='input-button'>
       <button onClick={fetchForecast}>Forecast</button>
-      {tokenVal ? <h3 className="alert">{tokenVal}</h3> : <></>}
+      {validation ? <h3 className="alert">{validation}</h3> : <></>}
+      </div>
     </div>
   )
 }
