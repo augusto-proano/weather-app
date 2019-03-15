@@ -21,7 +21,6 @@ const Forecast = () => {
   const dayNum = date.getDay()
   const currentDay = weekDays[dayNum]
 
-  console.log('FORECAST', forecast)
   return (
     <div>
       {fetched ? (

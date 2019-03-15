@@ -1,0 +1,337 @@
+#forecast-week-day i, #temp-icon, #forecast-today-details div h2 {
+  background: -webkit-linear-gradient(#7a20bd, #0115ff);
+  -webkit-background-clip: text;
+  background-clip: "text";
+  -webkit-text-fill-color: transparent;
+}
+
+#input-token input, #input-location {
+  outline: none;
+  text-shadow: 0px 0px 0.1vw #4e30ff;
+  border: inset 0.3vw #6857af;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+#input-token input:focus, #input-location:focus {
+  box-shadow: 0 0 0.2vw 0.1vw #4e30ff;
+}
+
+#forecast-today-details button, #input button {
+  outline: none;
+  color: white;
+  padding: 0.5vw 1vw;
+  border: inset 2px #a04ede;
+  background-image: linear-gradient(45deg, #7a20bd, #0115ff);
+  box-shadow: 0px 0px 0px 1px #7a20bd;
+  transition: 1s;
+}
+
+#forecast-today-details button:hover, #input button:hover {
+  color: #202b47;
+  background-image: linear-gradient(45deg, #6a54c05c, #1661f3d6);
+}
+
+#input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#input h1 {
+  margin: 3vw;
+  font-size: 6vw;
+}
+#input h2 {
+  font-size: 3vw;
+}
+#input button {
+  border-radius: 1vw;
+  font-size: 3vw;
+  width: 20vw;
+}
+#input-location {
+  border-radius: 1.5vw;
+  width: 30vw;
+  font-size: 4vw;
+  text-align: center;
+}
+
+#input-token {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 2vw;
+}
+#input-token button {
+  font-size: 1vw;
+  margin: inherit;
+  width: 8vw;
+  border-radius: 0.5vw;
+}
+#input-token h2 {
+  margin: 1vw;
+  font-size: 1.5vw;
+}
+#input-token input {
+  border-radius: 0.5vw;
+  font-size: 1.5vw;
+  width: 7vw;
+}
+@media (max-width: 450px) {
+  .alert {
+    font-size: 6vw !important;
+  }
+
+  #input h1 {
+    margin: 15vw 0vw 25vw 0vw;
+    font-size: 8vw;
+  }
+  #input h2 {
+    font-size: 5.5vw;
+  }
+  #input button {
+    margin: 5vw 0 4vw;
+    border-radius: 2vw;
+    font-size: 10vw;
+    width: 85vw;
+  }
+
+  #input-location {
+    border-radius: 1.5vw;
+    width: 60%;
+    font-size: 9vw;
+    text-align: center;
+  }
+
+  #input-token {
+    margin: 15vw;
+  }
+  #input-token h2 {
+    font-size: 5.5vw;
+  }
+  #input-token button {
+    font-size: 4.5vw;
+    margin: 1vw 0 0 9vw;
+    width: 26vw;
+    border-radius: 1vw;
+  }
+  #input-token input {
+    border-radius: 1vw;
+    font-size: 5.5vw;
+    width: 25vw;
+  }
+}
+#forecast-week-day i, #temp-icon, #forecast-today-details div h2 {
+  background: -webkit-linear-gradient(#7a20bd, #0115ff);
+  -webkit-background-clip: text;
+  background-clip: "text";
+  -webkit-text-fill-color: transparent;
+}
+
+#input-location, #input-token input {
+  outline: none;
+  text-shadow: 0px 0px 0.1vw #4e30ff;
+  border: inset 0.3vw #6857af;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+#input-location:focus, #input-token input:focus {
+  box-shadow: 0 0 0.2vw 0.1vw #4e30ff;
+}
+
+#forecast-today-details button, #input button {
+  outline: none;
+  color: white;
+  padding: 0.5vw 1vw;
+  border: inset 2px #a04ede;
+  background-image: linear-gradient(45deg, #7a20bd, #0115ff);
+  box-shadow: 0px 0px 0px 1px #7a20bd;
+  transition: 1s;
+}
+
+#forecast-today-details button:hover, #input button:hover {
+  color: #202b47;
+  background-image: linear-gradient(45deg, #6a54c05c, #1661f3d6);
+}
+
+#forecast {
+  margin: 3vw;
+}
+
+#forecast-today {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2vw;
+}
+
+#forecast-today-temp {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 65%;
+}
+
+#forecast-today-details {
+  display: flex;
+  flex-direction: column;
+}
+#forecast-today-details div {
+  display: flex;
+}
+#forecast-today-details div h2 {
+  margin: 0.5vw;
+  font-size: 1.5vw;
+}
+#forecast-today-details div h3 {
+  margin: 0.5vw;
+  font-size: 1.5vw;
+}
+#forecast-today-details a {
+  align-self: center;
+}
+#forecast-today-details button {
+  border-radius: 0.5vw;
+  font-size: 1.5vw;
+  margin: 0.5vw;
+}
+#temp-info h3 {
+  margin: auto;
+  font-size: 2.5vw;
+}
+#temp-info h2 {
+  font-size: 3.5vw;
+  margin: auto;
+}
+#temp-info h1 {
+  margin: auto;
+  font-size: 8.5vw;
+}
+
+#temp-icon {
+  font-size: 12vw;
+  margin: 0vw 3vw 0vw;
+}
+
+.wi {
+  line-height: 1.5 !important;
+}
+
+#forecast-week {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#forecast-week-day {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: inset 0.3vw #6857af;
+  border-radius: 0.5vw;
+  width: 15%;
+}
+#forecast-week-day i {
+  font-size: 6vw;
+}
+#forecast-week-day h2 {
+  margin: 1vw;
+  font-size: 2.5vw;
+}
+#forecast-week-day h3 {
+  font-size: 1.5vw;
+  margin: 1.5vw 0vw 1vw;
+}
+
+#forecast-week-day-temps {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  margin: 0vw 0vw 0vw 1vw;
+}
+#forecast-week-day-temps h3 {
+  font-size: 2.5vw;
+}
+
+@media (max-width: 450px) {
+  #forecast-today {
+    flex-direction: column;
+  }
+
+  #forecast-today-temp {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  #temp-info h3 {
+    font-size: 1em;
+  }
+  #temp-info h2 {
+    font-size: 1.5em;
+  }
+  #temp-info h1 {
+    font-size: 3em;
+  }
+
+  #temp-icon {
+    font-size: 30vw;
+  }
+
+  #forecast-today-details {
+    width: 80%;
+  }
+  #forecast-today-details div {
+    justify-content: space-between;
+  }
+  #forecast-today-details div h2 {
+    font-size: 4vw;
+  }
+  #forecast-today-details div h3 {
+    font-size: 4vw;
+  }
+  #forecast-today-details button {
+    font-size: 4vw;
+    margin: 2.5vw;
+  }
+
+  #forecast-week-day {
+    width: 25%;
+    margin: 3vw;
+  }
+  #forecast-week-day h2 {
+    font-size: 4vw;
+  }
+  #forecast-week-day i {
+    font-size: 12vw;
+  }
+  #forecast-week-day h3 {
+    font-size: 3vw;
+  }
+
+  #forecast-week-day-temps h3 {
+    font-size: 4.5vw;
+  }
+
+  #forecast-week {
+    margin: 2vw 0px;
+    justify-content: space-evenly;
+  }
+}
+body {
+  font-family: sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.alert {
+  font-size: 2vw;
+  color: #ff0000;
+}
+
+/*# sourceMappingURL=index.css.map*/
