@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../store'
-import { weatherIcons, toCamelCase, currentDay, weekDays } from './utils'
+import { weatherIcons, toCamelCase, weekDays } from './utils'
 
 const Forecast = () => {
   //Grabs forecast from context
@@ -15,6 +15,10 @@ const Forecast = () => {
     : ''
   const sunRise = fetched ? `${forecast.sun_rise.slice(11, 16)} AM` : ''
   const sunSet = fetched ? `${forecast.sun_set.slice(11, 16)} PM` : ''
+
+  const date = fetched ? new Date(forecast.time.slice(0, 10)) : new Date()
+  const dayNum = date.getDay()
+  const currentDay = weekDays[dayNum]
 
   console.log('FORECAST', forecast)
   return (

@@ -83,10 +83,8 @@ const Input = () => {
         <input onChange={handleTokenInput} value={accessToken} />
         <button onClick={getToken}>Free Token</button>
       </div>
-      <div id='input-button'>
       <button onClick={fetchForecast}>Forecast</button>
       {validation ? <h3 className="alert">{validation}</h3> : <></>}
-      </div>
     </div>
   )
 }
