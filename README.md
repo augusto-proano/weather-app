@@ -21,7 +21,7 @@ If you are using windows follow this extra step
 - **react:** framkework to build the UI
 - **react-router-rom:** it has a collection of navigational components that creates a SPA and dynamic routing
 - **react Context & react Hooks:** a nice state management library like redux could have been used to create a store but since weather-app is a small app with few components, that was accomplished using this tools
-- **SASS**: for styling a sassy app something like SASS is needed which is a Imperative CSS precompiler
+- **sass**: for styling a sassy app something like SASS is needed which is a Imperative CSS precompiler
 - **webpack:** bundles and compiles our client 
 - **babel:** compiles .js and jsx files
 - **css-loader, style-loader & sass-loader:** compiles .scss files
